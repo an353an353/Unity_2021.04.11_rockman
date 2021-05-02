@@ -2,6 +2,7 @@
 
 public class car : MonoBehaviour
 {
+    #region 欄位
     //單行註解2021.4.25 peko
     /*
      * 多行註解
@@ -77,8 +78,133 @@ public class car : MonoBehaviour
     //名稱去掉空格
     public Transform tra;                      //可儲存任何包含 Ttansform 元件的物件
     public SpriteRenderer spr;                 //可儲存任何包含 SpriteRenderer 元件的物件
+    
+    #endregion
+
+    #region  事件
+    public int number = 1;
+    public bool test = false;
+    public string prop = "紅色藥水";
+
+    // 事件 : 在特定時間點會被執行方法
+    // Unity 提供的事件 : 開始、更新
+    
+    //開始是件執行時間點與次數 : 播放遊戲後執行一次
+    //應用:數值初始化，例如 : 遊戲一開始多少金幣與生命值等等...
+    private void Start()
+    {
+        //print(任何資料) - 輸出資料到 Console 儀表板上
+        print("我是開始事件喔~");
+
+        // 欄位存取
+        // 取得
+        // 語法 : 欄位名稱
+        // 字串串接: 字串 + 其他欄位
+        print("取得欄位:" + number);
+
+        // 存放
+        // 語法 : 欄位名稱  指定 值;
+        //值必須與此欄位類型相同
+        test = true;
+        print("存放欄位後的結果:" + test);
+
+        prop = "藍色藥水";
+        print("存放後的道具名稱:" + prop);
+
+        // 呼叫方法
+        //方法名稱();
+        Test();
+        Test();
+        //傳回方法;
+        //傳回類型 名稱 = 傳回方法();
+        int t = Ten();
+        print("傳回方法的結果:" + t);
+
+        Drive50();
+        Drive100();
+        Drive300();
+        // 呼叫方法要有相同數量的參數
+        //有預設值得參數為 [選填式參數]
+        Drive(200, "咻咻咻");
+        Drive(999, "轟轟轟","爆炸特效");
+        // 有多個選填模式參數
+        Drive(70, "閃電");               //錯誤 - 把特效放在音效上
+        Drive(70, effect:"閃電");        //正確 - 指定特效參數
+
+    }
+
+
+    //更新事件執行時間點與次數:開始事件後以每秒約六十次執行 60FPS
+    //應用 :  監聽玩家輸入與物件持續行為，例如 : 玩家有沒有按按鈕或讓物件持續移動
+    private void Update()
+    {
+        print("我是更新事件!!!");
+
+    }
+    #endregion
+
+    #region 方法
+    // 方法 : 保存較複雜或演算法的程式區塊
+    // 語法 :
+    // 修飾詞 傳回類型 名稱(參數) {較複雜或演算法的程式區塊}
+    // void 無傳回 : 使用這個方法不會有傳回
+    // 方法需要被呼叫才會執行
+    /// <summary>
+    /// 我是一個測試方法
+    /// </summary>
+
+    private void Test()
+    {
+        print("我是測試方法。");
+    }
+
+    // 如果不是無傳回 void
+    // 在大括號內必須使用 傳回 return 值 (必須跟傳回類型相同)
+    /// <summary>
+    /// 傳回整數十的方法
+    /// </summary>
+    /// <returns>整數+</returns>
+    private int Ten()
+    {
+        return 10;
+    }
+
+    // 舉例:
+    // 三個方法 1. 以時數50 開車 2. 時數100 3.時數 300
+    private void Drive50()
+    {
+        print("開車時數:" + 50);
+        print("開車音效");
+    }
+    private void Drive100()
+    {
+        print("開車時數:" + 100);
+        print("開車音效");
+    }
+    private void Drive300()
+    {
+        print("開車時數:" + 300);
+        print("開車音效");
+    }
+
+    // 參數解決 Parmater
+    // 參數語法 : 類型 參數名稱
+    /// <summary>
+    /// 開車
+    /// </summary>
+    /// <param name="speed">開車的時速</param>
+    /// <param name="sound">開車的音效</param> 
+    /// <param name="effect">特效</param>
+    // 有預設值得參數只能寫在最右邊
+    private void Drive(int speed, string sound = "咻~",string effect = "灰塵效果")
+    {
+        print("開車時數:" + speed);
+        print("開車音效:" + sound);
+        print("特效" + effect);
+    }
 
 
 
 
+    #endregion
 }
