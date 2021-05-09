@@ -4418,6 +4418,7 @@ GameObject:
   - component: {fileID: 1431190743}
   - component: {fileID: 1431190746}
   - component: {fileID: 1431190747}
+  - component: {fileID: 1431190748}
   m_Layer: 0
   m_Name: "\u73A9\u5BB6Idle (1)"
   m_TagString: Untagged
@@ -4528,7 +4529,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!70 &1431190747
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -4545,6 +4546,29 @@ CapsuleCollider2D:
   m_Offset: {x: -0.04870504, y: -0.103235245}
   m_Size: {x: 0.7780286, y: 1.4319985}
   m_Direction: 0
+--- !u!114 &1431190748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1431190742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7757e8d1777204f46ade1a99d9471580, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  walkspeed: 1000
+  jumptall: 338
+  health: 100
+  onfloor: 0
+  bullet: {fileID: 0}
+  bulletPoint: {fileID: 0}
+  bulletspeed: 800
+  gunnoice: {fileID: 0}
+  bulletSound: {fileID: 0}
+  groundoffset: {x: 0, y: -0.79, z: 0}
+  groundRadius: 0.2
 --- !u!1 &1569285947
 GameObject:
   m_ObjectHideFlags: 0
